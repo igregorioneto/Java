@@ -1,12 +1,25 @@
 public class Livro {
-    String nome;
-    String descricao;
-    double valor;
-    String isbn;
-    Autor autor;
+    private String nome;
+    private String descricao;
+    private double valor;
+    private String isbn;
+    private Autor autor;
 
-    public void aplicarDescontoDe(double porcentagem) {
+    public Livro(Autor autor) {
+        this();
+        this.autor = autor;
+    }
+
+    public Livro() {
+        this.isbn = "000-00-00000-00-0";
+    }
+
+    public boolean aplicarDescontoDe(double porcentagem) {
+        if (porcentagem > 0.3)
+            return false;
+
         this.valor -= this.valor * porcentagem;
+        return true;
     }
 
     public boolean temAutor() {
@@ -25,5 +38,45 @@ public class Livro {
         }
 
         System.out.println("--");
+    }
+
+    public String getNome() {
+        return this.nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getDescricao() {
+        return this.descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public String getIsbn() {
+        return this.isbn;
+    }
+
+    public void setIsbn(String isbn) {
+        this.isbn = isbn;
+    }
+
+    public double getValor() {
+        return this.valor;
+    }
+
+    public void setValor(double valor) {
+        this.valor = valor;
+    }
+
+    public Autor getAutor() {
+        return this.autor;
+    }
+
+    public void setAutor(Autor autor) {
+        this.autor = autor;
     }
 }
