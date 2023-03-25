@@ -1,4 +1,4 @@
-public abstract class Livro {
+public abstract class Livro implements Produto{
     private String nome;
     private String descricao;
     private double valor;
@@ -13,8 +13,6 @@ public abstract class Livro {
     public Livro() {
         this.isbn = "000-00-00000-00-0";
     }
-
-    public abstract boolean aplicarDescontoDe(double porcentagem);
 
     public boolean temAutor() {
         return this.autor != null;

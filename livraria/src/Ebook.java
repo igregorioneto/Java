@@ -1,4 +1,4 @@
-public class Ebook extends Livro{
+public class Ebook extends Livro implements Promocional{
 
     private String waterMark;
 
@@ -10,9 +10,9 @@ public class Ebook extends Livro{
     public boolean aplicarDescontoDe(double porcentagem) {
         if(porcentagem > 0.15)
             return false;
-//        double desconto = this.getValor() * porcentagem;
-//        this.setValor(this.getValor() - desconto);
-        return super.aplicarDescontoDe(porcentagem);
+        double desconto = this.getValor() * porcentagem;
+        this.setValor(this.getValor() - desconto);
+        return true;
     }
 
     public String getWaterMark() {
