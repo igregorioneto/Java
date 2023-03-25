@@ -1,3 +1,5 @@
+package br.com.estudo.livraria.teste;
+
 public class CalculadoraDeEstoque {
     public static void main(String[] args) {
         double soma = 0;

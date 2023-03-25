@@ -1,3 +1,9 @@
+package br.com.estudo.livraria.teste;
+
+import br.com.estudo.livraria.Autor;
+import br.com.estudo.livraria.produtos.Livro;
+import br.com.estudo.livraria.produtos.LivroFisico;
+
 public class CadastroDeLivros {
     public static void main(String[] args) {
         Autor autor = new Autor();

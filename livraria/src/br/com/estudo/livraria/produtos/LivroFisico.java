@@ -1,3 +1,7 @@
+package br.com.estudo.livraria.produtos;
+
+import br.com.estudo.livraria.Autor;
+
 public class LivroFisico extends Livro implements Promocional {
     public LivroFisico(Autor autor) {
         super(autor);
@@ -14,7 +18,7 @@ public class LivroFisico extends Livro implements Promocional {
 
         double desconto = this.getValor() * porcentagem;
         this.setValor(this.getValor() - desconto);
-        System.out.println("aplicando desconto no LivroFisico");
+        System.out.println("aplicando desconto no br.com.estudo.livraria.produtos.LivroFisico");
         return true;
     }
 }

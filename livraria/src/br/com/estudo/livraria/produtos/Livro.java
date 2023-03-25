@@ -1,4 +1,9 @@
-public abstract class Livro implements Produto{
+package br.com.estudo.livraria.produtos;
+
+import br.com.estudo.livraria.Autor;
+import br.com.estudo.livraria.produtos.Produto;
+
+public abstract class Livro implements Produto {
     private String nome;
     private String descricao;
     private double valor;
@@ -18,7 +23,7 @@ public abstract class Livro implements Produto{
         return this.autor != null;
     }
 
-    void mostrarDetalhes() {
+    public void mostrarDetalhes() {
         System.out.println("Mostrando detalhes do livro ");
         System.out.println("Nome: " + nome);
         System.out.println("Descrição: " + descricao);

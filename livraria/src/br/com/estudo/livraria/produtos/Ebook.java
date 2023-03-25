@@ -1,4 +1,8 @@
-public class Ebook extends Livro implements Promocional{
+package br.com.estudo.livraria.produtos;
+
+import br.com.estudo.livraria.Autor;
+
+public class Ebook extends Livro implements Promocional {
 
     private String waterMark;
 

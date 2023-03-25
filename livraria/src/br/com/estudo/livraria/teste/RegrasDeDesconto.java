@@ -1,3 +1,10 @@
+package br.com.estudo.livraria.teste;
+
+import br.com.estudo.livraria.Autor;
+import br.com.estudo.livraria.produtos.Ebook;
+import br.com.estudo.livraria.produtos.Livro;
+import br.com.estudo.livraria.produtos.MiniLivro;
+
 public class RegrasDeDesconto {
     public static void main(String[] args) {
         Autor autor = new Autor();

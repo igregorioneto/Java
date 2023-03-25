@@ -1,3 +1,7 @@
+package br.com.estudo.livraria.produtos;
+
+import br.com.estudo.livraria.produtos.Produto;
+
 public class CarrinhoDeCompras {
     private double total;
 

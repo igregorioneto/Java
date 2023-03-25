@@ -1,3 +1,5 @@
+package br.com.estudo.livraria.produtos;
+
 @FunctionalInterface
 public interface Promocional {
     boolean aplicarDescontoDe(double porcentagem);

@@ -1,3 +1,9 @@
+package br.com.estudo.livraria.produtos;
+
+import br.com.estudo.livraria.Editora;
+import br.com.estudo.livraria.produtos.Produto;
+import br.com.estudo.livraria.produtos.Promocional;
+
 public class Revista implements Produto, Promocional {
     private String nome;
     private String descricao;

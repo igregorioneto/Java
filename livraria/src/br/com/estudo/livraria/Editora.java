@@ -1,3 +1,5 @@
+package br.com.estudo.livraria;
+
 public class Editora {
 
     private String nomeFantasia;
