@@ -1,6 +1,7 @@
 package br.com.estudo.livraria.produtos;
 
 import br.com.estudo.livraria.Autor;
+import br.com.estudo.livraria.exception.AutorNuloException;
 import br.com.estudo.livraria.produtos.Produto;
 
 public abstract class Livro implements Produto {
@@ -12,6 +13,8 @@ public abstract class Livro implements Produto {
 
     public Livro(Autor autor) {
         this();
+        if(autor == null)
+            throw new AutorNuloException("O Autor do Livro não pode ser nulo");
         this.autor = autor;
     }
 

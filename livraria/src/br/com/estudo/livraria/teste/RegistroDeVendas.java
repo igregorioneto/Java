@@ -4,6 +4,7 @@ import br.com.estudo.livraria.Autor;
 import br.com.estudo.livraria.produtos.CarrinhoDeCompras;
 import br.com.estudo.livraria.produtos.Ebook;
 import br.com.estudo.livraria.produtos.LivroFisico;
+import br.com.estudo.livraria.produtos.Produto;
 
 public class RegistroDeVendas {
 
@@ -29,5 +30,23 @@ public class RegistroDeVendas {
         carrinhoDeCompras.adiciona(ebook);
 
         System.out.println("Total: " + carrinhoDeCompras.getTotal());
+
+        Produto[] produtos = carrinhoDeCompras.getProdutos();
+
+        for (Produto produto: produtos) {
+            try {
+                if (produto != null)
+                    System.out.println(produto.getValor());
+            }catch (ArrayIndexOutOfBoundsException e) {
+                System.out.println("Gerou um erro aqui: " + e);
+            }catch (NullPointerException e){
+                System.out.println("O Array não foi instanciado!");
+            }catch(Exception e ) {
+                e.printStackTrace();
+            }finally {
+                System.out.println("Entrou no finally!");
+            }
+        }
+
     }
 }
