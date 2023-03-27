@@ -5,7 +5,8 @@ public class Autor {
     String email;
     String cpf;
 
-    public void mostrarDetalhes() {
+    @Override
+    public void toString() {
         System.out.println("Mostrando detalhes do autor ");
         System.out.println("Nome: " + nome);
         System.out.println("Email: " + email);
@@ -34,5 +35,12 @@ public class Autor {
 
     public void setCpf(String cpf) {
         this.cpf = cpf;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (!(obj instanceof Autor)) return false;
+        Autor outro = (Autor) obj;
+        return this.nome.equals(outro.nome);
     }
 }

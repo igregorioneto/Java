@@ -26,7 +26,8 @@ public abstract class Livro implements Produto {
         return this.autor != null;
     }
 
-    public void mostrarDetalhes() {
+    @Override
+    public void toString() {
         System.out.println("Mostrando detalhes do livro ");
         System.out.println("Nome: " + nome);
         System.out.println("Descrição: " + descricao);
