@@ -27,7 +27,7 @@ public abstract class Livro implements Produto {
     }
 
     @Override
-    public void toString() {
+    public String toString() {
         System.out.println("Mostrando detalhes do livro ");
         System.out.println("Nome: " + nome);
         System.out.println("Descrição: " + descricao);
@@ -35,10 +35,11 @@ public abstract class Livro implements Produto {
         System.out.println("ISBN: " + isbn);
 
         if(this.temAutor()) {
-            autor.mostrarDetalhes();
+            autor.toString();
         }
 
         System.out.println("--");
+        return "";
     }
 
     public String getNome() {

@@ -6,6 +6,8 @@ import br.com.estudo.livraria.produtos.Ebook;
 import br.com.estudo.livraria.produtos.LivroFisico;
 import br.com.estudo.livraria.produtos.Produto;
 
+import java.util.List;
+
 public class RegistroDeVendas {
 
     public static void main(String[] args) {
@@ -31,7 +33,7 @@ public class RegistroDeVendas {
 
         System.out.println("Total: " + carrinhoDeCompras.getTotal());
 
-        Produto[] produtos = carrinhoDeCompras.getProdutos();
+        List<Produto> produtos = carrinhoDeCompras.getProdutos();
 
         for (Produto produto: produtos) {
             try {

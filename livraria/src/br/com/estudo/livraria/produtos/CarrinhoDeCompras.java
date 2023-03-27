@@ -2,21 +2,30 @@ package br.com.estudo.livraria.produtos;
 
 import br.com.estudo.livraria.produtos.Produto;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class CarrinhoDeCompras {
     private double total;
-    private Produto[] produtos = new Produto[10];
-    private int contador = 0;
+    private List<Produto> produtos;
+
+    public CarrinhoDeCompras() {
+        this.produtos = new ArrayList<Produto>();
+    }
 
     public void adiciona(Produto produto) {
         System.out.println("Adicionando: " + produto);
-        this.produtos[contador] = produto;
-        this.contador++;
         total += produto.getValor();
+        this.produtos.add(produto);
     }
 
-    public double getTotal() { return this.total; }
+    public void remove(int posicao) {
+        this.produtos.remove(posicao);
+    }
 
-    public Produto[] getProdutos() {
+    public double getTotal() { return total; }
+
+    public List<Produto> getProdutos() {
         return produtos;
     }
 }

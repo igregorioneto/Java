@@ -17,7 +17,7 @@ public class CadastroDeLivros {
         livro.setValor(59.90);
         livro.setIsbn("978-85-66250-46-6");
 
-        livro.mostrarDetalhes();
+//        livro.mostrarDetalhes();
 
         Autor outroAutor = new Autor();
         outroAutor.setNome("Maria Silva");
@@ -29,6 +29,6 @@ public class CadastroDeLivros {
         outroLivro.setDescricao("Crie seus primeiros programas");
         outroLivro.setValor(59.90);
 
-        outroLivro.mostrarDetalhes();
+//        outroLivro.mostrarDetalhes();
     }
 }

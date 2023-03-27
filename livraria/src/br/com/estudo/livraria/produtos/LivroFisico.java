@@ -21,4 +21,13 @@ public class LivroFisico extends Livro implements Promocional {
         System.out.println("aplicando desconto no br.com.estudo.livraria.produtos.LivroFisico");
         return true;
     }
+
+    @Override
+    public int compareTo(Produto outro) {
+        if (this.getValor() < outro.getValor())
+            return -1;
+        if (this.getValor() > outro.getValor())
+            return 1;
+        return 0;
+    }
 }

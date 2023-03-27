@@ -19,6 +19,20 @@ public class Ebook extends Livro implements Promocional {
         return true;
     }
 
+    @Override
+    public boolean aplicarDescontoDe10Porcento() {
+        return Promocional.super.aplicarDescontoDe10Porcento();
+    }
+
+    @Override
+    public int compareTo(Produto outro) {
+        if (this.getValor() < outro.getValor())
+            return -1;
+        if (this.getValor() > outro.getValor())
+            return 1;
+        return 0;
+    }
+
     public String getWaterMark() {
         return this.waterMark;
     }

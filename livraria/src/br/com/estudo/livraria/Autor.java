@@ -6,11 +6,12 @@ public class Autor {
     String cpf;
 
     @Override
-    public void toString() {
+    public String toString() {
         System.out.println("Mostrando detalhes do autor ");
         System.out.println("Nome: " + nome);
         System.out.println("Email: " + email);
         System.out.println("CPF: " + cpf);
+        return "";
     }
 
     public String getNome() {

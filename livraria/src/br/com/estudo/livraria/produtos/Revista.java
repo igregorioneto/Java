@@ -1,8 +1,6 @@
 package br.com.estudo.livraria.produtos;
 
 import br.com.estudo.livraria.Editora;
-import br.com.estudo.livraria.produtos.Produto;
-import br.com.estudo.livraria.produtos.Promocional;
 
 public class Revista implements Produto, Promocional {
     private String nome;
@@ -53,5 +51,14 @@ public class Revista implements Produto, Promocional {
     @Override
     public boolean aplicarDescontoDe(double porcentagem) {
         return false;
+    }
+
+    @Override
+    public int compareTo(Produto outro) {
+        if(this.getValor() < outro.getValor())
+            return -1;
+        if (this.getValor() > outro.getValor())
+            return 1;
+        return 0;
     }
 }
