@@ -6,6 +6,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 public class Interativo extends JFrame {
+    private static final long serialVersionUID = 1L;
     private JPanel tela;
     private int px;
     private int py;
@@ -14,9 +15,11 @@ public class Interativo extends JFrame {
 
     public void inicia() {
         long prxAtualizacao = 0;
+
         while (jogando) {
             if (System.currentTimeMillis() >= prxAtualizacao) {
                 tela.repaint();
+
                 prxAtualizacao = System.currentTimeMillis() + FPS;
             }
         }
@@ -59,29 +62,29 @@ public class Interativo extends JFrame {
                         px++;
                         break;
                 }
-
-                tela = new JPanel() {
-                    @Override
-                    public void paintComponent(Graphics g) {
-                        g.setColor(Color.WHITE);
-                        g.fillRect(0, 0,
-                                tela.getWidth(), tela.getHeight());
-
-                        int x = tela.getWidth() / 2 - 20 + px;
-                        int y = tela.getHeight() / 2 - 20 + py;
-
-                        g.setColor(Color.BLUE);
-                        g.fillRect(x, y, 40, 40);
-                        g.drawString("Agora eu estou em " + x + "x " + y + "y ", 5,10);
-                    }
-                };
-
-                getContentPane().add(tela);
-                setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                setSize(640,480);
-                setVisible(true);
             }
         });
+
+        tela = new JPanel() {
+            @Override
+            public void paintComponent(Graphics g) {
+                g.setColor(Color.WHITE);
+                g.fillRect(0, 0,
+                        tela.getWidth(), tela.getHeight());
+
+                int x = tela.getWidth() / 2 - 20 + px;
+                int y = tela.getHeight() / 2 - 20 + py;
+
+                g.setColor(Color.BLUE);
+                g.fillRect(x, y, 40, 40);
+                g.drawString("Agora eu estou em " + x + "x " + y + "y ", 5,10);
+            }
+        };
+
+        getContentPane().add(tela);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setSize(640,480);
+        setVisible(true);
     }
 
     public static void main(String[] args) {
