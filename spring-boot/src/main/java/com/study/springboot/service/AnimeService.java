@@ -7,6 +7,8 @@ import com.study.springboot.repository.AnimeRepository;
 import com.study.springboot.requests.AnimePostRequestBody;
 import com.study.springboot.requests.AnimePutRequestBody;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -26,8 +28,8 @@ public class AnimeService {
 //        animes = new ArrayList<>(List.of(new Anime(1L, "GTI"), new Anime(2L, "Berserk")));
 //    }
 
-    public List<Anime> listAll() {
-        return animeRepository.findAll();
+    public Page<Anime> listAll(Pageable pageable) {
+        return animeRepository.findAll(pageable);
     }
 
     public Anime findByIdOrThrowBadRequestException(long id) {
