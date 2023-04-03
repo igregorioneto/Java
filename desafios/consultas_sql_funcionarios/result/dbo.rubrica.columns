@@ -1,0 +1,4 @@
+"name","type","length","leftDigits","rightDigits"
+"id","INTEGER","1","1","0"
+"descricao","STRING","12","0","0"
+"tipo","INTEGER","1","1","0"

@@ -1,0 +1,8 @@
+"name","type","length","leftDigits","rightDigits"
+"id","INTEGER","4","4","0"
+"nome","STRING","23","0","0"
+"nascimento","STRING","10","0","0"
+"admissao","STRING","10","0","0"
+"cargoId","INTEGER","1","1","0"
+"lotacaoId","INTEGER","1","1","0"
+"salario","STRING","8","0","0"

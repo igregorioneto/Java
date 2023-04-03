@@ -1,0 +1,4 @@
+"name","type","length","leftDigits","rightDigits"
+"id","INTEGER","1","1","0"
+"descricao","STRING","25","0","0"
+"salario","DECIMAL","7","4","2"

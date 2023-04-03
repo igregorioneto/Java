@@ -1,0 +1,6 @@
+"name","type","length","leftDigits","rightDigits"
+"id","INTEGER","5","5","0"
+"empregadoId","INTEGER","4","4","0"
+"rubricaId","INTEGER","1","1","0"
+"folhaId","INTEGER","2","2","0"
+"valor","DECIMAL","8","5","2"

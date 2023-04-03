@@ -1,0 +1,8 @@
+"name","type","length","leftDigits","rightDigits"
+"id","INTEGER","5","5","0"
+"idEmpregado","INTEGER","4","4","0"
+"periodo","INTEGER","6","6","0"
+"geraHH","STRING","6","3","2"
+"geraFalta","STRING","6","0","0"
+"geraGratificacao","STRING","6","0","0"
+"geraComissao","DECIMAL","6","3","2"
