@@ -1,6 +1,8 @@
 package com.tddjava.book.services;
 
 import com.tddjava.book.modules.books.entities.Book;
+import com.tddjava.book.modules.books.repositories.BookInMemoryRepository;
+import com.tddjava.book.modules.books.services.CreateBookService;
 import org.junit.Test;
 
 import java.util.UUID;
