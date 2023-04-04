@@ -1,5 +1,6 @@
 package com.tddjava.book.services;
 
+import com.tddjava.book.modules.books.entities.Book;
 import org.junit.Test;
 
 import java.util.UUID;
