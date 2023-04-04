@@ -5,6 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
 
 @Service
 public class BookRepository implements IBookRepository {
@@ -24,5 +26,11 @@ public class BookRepository implements IBookRepository {
     @Override
     public List<Book> findAll() {
         return this.repository.findAll();
+    }
+
+    @Override
+    public Book findById(UUID id) {
+        Optional<Book> optional = this.repository.findById(id).stream().findFirst();
+        return optional.orElse(null);
     }
 }

@@ -31,4 +31,10 @@ public class BookInMemoryRepository implements IBookRepository {
     public List<Book> findAll() {
         return this.books;
     }
+
+    @Override
+    public Book findById(UUID id) {
+        Optional<Book> optional = this.books.stream().filter(book -> book.getId().equals(id)).findFirst();
+        return optional.orElse(null);
+    }
 }

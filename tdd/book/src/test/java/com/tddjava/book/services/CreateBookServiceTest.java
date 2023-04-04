@@ -4,6 +4,7 @@ import com.tddjava.book.modules.books.entities.Book;
 import com.tddjava.book.modules.books.repositories.BookInMemoryRepository;
 import com.tddjava.book.modules.books.services.CreateBookService;
 import com.tddjava.book.modules.books.services.FindAllBookService;
+import com.tddjava.book.modules.books.services.FindByIdBookService;
 import org.assertj.core.api.Assertions;
 import org.junit.Test;
 
@@ -47,5 +48,22 @@ public class CreateBookServiceTest {
         List<Book> listBooks = service.execute();
 
         Assertions.assertThat(listBooks).isNotNull();
+    }
+
+    @Test
+    public void should_be_able_to_find_book_by_id() {
+        BookInMemoryRepository repository = new BookInMemoryRepository();
+        Book book = new Book();
+        book.setId(UUID.randomUUID());
+        book.setName("The Lord of the Rings");
+        book.setAuthor("J. R. R. Tolkien");
+
+        CreateBookService createService = new CreateBookService(repository);
+        createService.execute(book);
+
+        FindByIdBookService service = new FindByIdBookService(repository);
+        Book bookExists = service.execute(book.getId());
+
+        assertNotNull(bookExists.getId());
     }
 }
