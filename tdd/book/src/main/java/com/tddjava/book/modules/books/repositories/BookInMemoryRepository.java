@@ -26,4 +26,9 @@ public class BookInMemoryRepository implements IBookRepository {
         book.setId(UUID.randomUUID());
         return book;
     }
+
+    @Override
+    public List<Book> findAll() {
+        return this.books;
+    }
 }

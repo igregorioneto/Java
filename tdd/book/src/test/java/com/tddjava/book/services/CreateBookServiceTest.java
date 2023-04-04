@@ -3,10 +3,18 @@ package com.tddjava.book.services;
 import com.tddjava.book.modules.books.entities.Book;
 import com.tddjava.book.modules.books.repositories.BookInMemoryRepository;
 import com.tddjava.book.modules.books.services.CreateBookService;
+import com.tddjava.book.modules.books.services.FindAllBookService;
+import org.assertj.core.api.Assertions;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.UUID;
 
+import static org.junit.Assert.*;
+
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class CreateBookServiceTest {
@@ -31,4 +39,13 @@ public class CreateBookServiceTest {
           assertNotNull(createdBook.getId());
     }
 
+    @Test
+    public void should_be_able_to_list_books() {
+        BookInMemoryRepository repository = new BookInMemoryRepository();
+
+        FindAllBookService service = new FindAllBookService(repository);
+        List<Book> listBooks = service.execute();
+
+        Assertions.assertThat(listBooks).isNotNull();
+    }
 }
