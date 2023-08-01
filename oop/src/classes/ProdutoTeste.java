@@ -6,7 +6,8 @@ public class ProdutoTeste {
 		Produto p1 = new Produto();
 		p1.nome = "Notebook";
 		p1.preco = 4300;
-		p1.desconto = 0.25;
+		
+		Produto.desconto = 0.50;
 		
 		double precoFinal = p1.precoComDesconto();
 		
