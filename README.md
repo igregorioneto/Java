@@ -84,6 +84,12 @@ Objetivo:
         </a>
         Onde contém um desafio em Spring Boot com TDD usando JUnit.
     </li>
+    <li>
+        <a href="https://github.com/igregorioneto/Java/tree/main/DevMidTest">
+            [DevMidTest] 
+        </a>
+        Lista de exercícios DevMidTest
+    </li>
 </ul>
 </p>
 
