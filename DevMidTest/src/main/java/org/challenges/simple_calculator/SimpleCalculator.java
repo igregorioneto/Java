@@ -11,7 +11,7 @@ public class SimpleCalculator {
         this.operator = operator;
     }
 
-    public double calculator() {
+    public String calculator() {
         double result = 0;
         switch (operator) {
             case "+":
@@ -27,17 +27,13 @@ public class SimpleCalculator {
                 result = number1 / number2;
                 break;
             default:
-                break;
+                return "Error performing calculation, check operator or entered values.";
         }
-        return result;
+        return "The result is: " + String.valueOf(result);
     }
 
     @Override
     public String toString() {
-        if (calculator() == 0) {
-            return "Error performing calculation, check operator or entered values.";
-        } else {
-            return "The result is: " + calculator();
-        }
+        return calculator();
     }
 }
