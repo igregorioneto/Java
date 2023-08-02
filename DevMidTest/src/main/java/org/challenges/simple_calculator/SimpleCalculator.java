@@ -34,6 +34,6 @@ public class SimpleCalculator {
 
     @Override
     public String toString() {
-        return calculator();
+        return calculator()  + "\n";
     }
 }
