@@ -1,6 +1,6 @@
 package oop.desafio_composicao;
 
-public class ClienteTeste {
+public class Sistema {
     public static void main(String[] args) {
         Produto p1 = new Produto("Notebook", 3000);
         Produto p2 = new Produto("Geladeira", 4500);
