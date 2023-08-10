@@ -1,24 +1,32 @@
 package oop.horanca.desafio;
 
 public class Carro {
-    int velocidade = 0;
+    final int VELOCIDADE_MAXIMA;
+    int velocidade;
+    int delta = 5;
 
-    boolean acelerar() {
-        if(velocidade >= 0) {
-            velocidade += 5;
-            return true;
-        }
-        return false;
+    Carro(int velocidadeMaxima) {
+        VELOCIDADE_MAXIMA = velocidadeMaxima;
     }
 
-    boolean frear() {
-        if(velocidade > 0) {
-            velocidade -= 5;
-            if (velocidade < 0) velocidade = 0;
-            return true;
-        }
+    Carro(int velocidade, int delta) {
+        VELOCIDADE_MAXIMA = velocidade;
+        this.delta = delta;
+    }
 
-        return false;
+    void acelerar() {
+        if (velocidade + delta > VELOCIDADE_MAXIMA) {
+            velocidade = VELOCIDADE_MAXIMA;
+        } else {
+            velocidade += delta;
+        }
+    }
+
+    void frear() {
+        if(velocidade > 0) {
+            velocidade -= delta;
+            if (velocidade < 0) velocidade = 0;
+        }
     }
 
     @Override

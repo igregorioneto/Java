@@ -2,11 +2,11 @@ package oop.horanca;
 
 public class JogoTesteCombate {
     public static void main(String[] args) {
-        Heroi heroi = new Heroi();
-        heroi.x = 10;
-        heroi.y = 10;
+        Heroi heroi = new Heroi(10,10);
+        System.out.println("Instancias iniciais do heroi: " + heroi.x + " " + heroi.y);
 
         Monstro monstro = new Monstro();
+        System.out.println("Instancias iniciais do monstro: " + monstro.x + " " + monstro.y);
         monstro.x = 10;
         monstro.y = 11;
 
