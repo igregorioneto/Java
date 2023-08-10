@@ -1,4 +1,4 @@
-package oop.horanca.desafio;
+package oop.heranca.desafio;
 
 public class Civic extends Carro{
     Civic(int velocidadeMaxima) {

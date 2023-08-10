@@ -1,4 +1,4 @@
-package oop.horanca;
+package oop.heranca;
 
 public class JogoTesteCombate {
     public static void main(String[] args) {

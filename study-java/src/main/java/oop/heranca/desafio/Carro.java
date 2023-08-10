@@ -1,4 +1,4 @@
-package oop.horanca.desafio;
+package oop.heranca.desafio;
 
 public class Carro {
     final int VELOCIDADE_MAXIMA;

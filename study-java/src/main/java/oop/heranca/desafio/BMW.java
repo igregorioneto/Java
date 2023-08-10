@@ -1,4 +1,4 @@
-package oop.horanca.desafio;
+package oop.heranca.desafio;
 
 public class BMW extends Carro{
     BMW() {
