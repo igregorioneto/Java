@@ -1,4 +1,8 @@
-package oop.heranca.desafio;
+package oop.heranca.teste;
+
+import oop.heranca.desafio.BMW;
+import oop.heranca.desafio.Civic;
+import oop.heranca.desafio.Ferrari;
 
 public class teste {
     public static void main(String[] args) {

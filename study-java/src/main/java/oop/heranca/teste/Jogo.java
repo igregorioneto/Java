@@ -1,4 +1,8 @@
-package oop.heranca;
+package oop.heranca.teste;
+
+import oop.heranca.Direcao;
+import oop.heranca.Heroi;
+import oop.heranca.Monstro;
 
 public class Jogo {
     public static void main(String[] args) {

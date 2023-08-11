@@ -6,7 +6,7 @@ public class Ferrari extends Carro {
         super(315);
     }
 
-    Ferrari(int velocidadeMaxima) {
+    public Ferrari(int velocidadeMaxima) {
         this(velocidadeMaxima, 15);
     }
 
@@ -14,7 +14,7 @@ public class Ferrari extends Carro {
         super(velocidadeMaxima, delta);
     }
 
-    void frear(int f) {
+    public void frear(int f) {
         if(velocidade > 0) {
             velocidade -= f;
             if (velocidade < 0) velocidade = 0;

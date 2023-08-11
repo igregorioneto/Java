@@ -1,7 +1,7 @@
 package oop.heranca.desafio;
 
 public class BMW extends Carro{
-    BMW() {
+    public BMW() {
         super(185);
     }
 }
