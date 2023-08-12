@@ -7,8 +7,10 @@ import oop.heranca.desafio.Ferrari;
 public class teste {
     public static void main(String[] args) {
         Ferrari ferrari = new Ferrari(300);
+        ferrari.ligarTurbo();
         ferrari.acelerar();
         ferrari.acelerar();
+        ferrari.velocidadeDoAr();
         ferrari.frear(35);
         System.out.println("Ferrari: " + ferrari);
 
