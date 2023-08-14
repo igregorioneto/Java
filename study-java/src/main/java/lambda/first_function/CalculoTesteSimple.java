@@ -1,5 +1,7 @@
 package lambda.first_function;
 
+import java.util.*;
+
 public class CalculoTesteSimple {
     public static void main(String[] args) {
         Calculo calculo = new Somar();
