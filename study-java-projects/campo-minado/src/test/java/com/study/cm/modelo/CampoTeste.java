@@ -1,4 +1,4 @@
-package com.study.cm;
+package com.study.cm.modelo;
 
 import com.study.cm.modelo.Campo;
 import static org.junit.jupiter.api.Assertions.*;

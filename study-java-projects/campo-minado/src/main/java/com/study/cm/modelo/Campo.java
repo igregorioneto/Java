@@ -1,5 +1,7 @@
 package com.study.cm.modelo;
 
+import com.study.cm.excecao.ExplosaoException;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,12 +15,12 @@ public class Campo {
 
     private List<Campo> vizinhos = new ArrayList<>();
 
-    public Campo(int linha, int coluna) {
+    Campo(int linha, int coluna) {
         this.linha = linha;
         this.coluna = coluna;
     }
 
-    public boolean adicionarVizinhos(Campo vizinho) {
+    boolean adicionarVizinhos(Campo vizinho) {
         boolean linhaDiferente = linha != vizinho.linha;
         boolean colunaDiferente = coluna != vizinho.coluna;
         boolean diagonal = linhaDiferente && colunaDiferente;
@@ -39,4 +41,80 @@ public class Campo {
 
     }
 
+    boolean abrir() {
+        if (!aberto && !marcado) {
+            aberto = true;
+
+            if (minado) {
+                throw new ExplosaoException();
+            }
+
+            if (vizinhancaSegura()) {
+                vizinhos.forEach(v -> v.abrir());
+            }
+
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    boolean vizinhancaSegura() {
+        return vizinhos.stream().noneMatch(v -> v.minado);
+    }
+
+    void minar() {
+        minado = true;
+    }
+
+    public boolean isMarcado() {
+        return marcado;
+    }
+
+    public boolean isAberto() {
+        return aberto;
+    }
+
+    public boolean isFechado() {
+        return !isAberto();
+    }
+
+    public int getLinha() {
+        return linha;
+    }
+
+    public int getColuna() {
+        return coluna;
+    }
+
+    boolean objetivoAlcancado() {
+        boolean desvendado = !minado && aberto;
+        boolean protegido = minado && marcado;
+        return desvendado || protegido;
+    }
+
+    long minasVaziasVizinhanca() {
+        return vizinhos.stream().filter(v -> v.minado).count();
+    }
+
+    void reiniciar() {
+        aberto = false;
+        minado = false;
+        marcado = false;
+    }
+
+    @Override
+    public String toString() {
+        if (marcado) {
+            return "x";
+        } else if (aberto && minado) {
+            return "*";
+        } else if (aberto && minasVaziasVizinhanca() > 0) {
+            return Long.toString(minasVaziasVizinhanca());
+        } else if (aberto) {
+            return " ";
+        } else  {
+            return "?";
+        }
+    }
 }
